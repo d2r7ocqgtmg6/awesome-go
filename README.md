@@ -9,6 +9,8 @@
 A curated list of awesome Go frameworks, libraries, and software. Inspired by [awesome-python](https://github.com/vinta/awesome-python).
 
 > **Personal fork** — I use this as a reference while learning Go. My notes and highlights are sprinkled throughout.
+>
+> **My learning focus areas:** Networking, Distributed Systems, and Database libraries — I've added ⭐ markers next to entries I've personally tried and found useful.
 
 **Contributing:**
 
@@ -63,7 +65,4 @@ Please take a quick look at the [contribution guidelines](CONTRIBUTING.md) first
   - [Security](#security)
   - [Serialization](#serialization)
   - [Server Applications](#server-applications)
-  - [Stream Processing](#stream-processing)
-  - [Template Engines](#template-engines)
-  - [Testing](#testing)
-  - [Text Processing](#te
+  - [Stream Proce
