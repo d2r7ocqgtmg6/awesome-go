@@ -72,7 +72,8 @@ func parseFlags() Config {
 	flag.StringVar(&cfg.ReadmeFile, "readme", DefaultReadme, "Path to the README.md file")
 	flag.BoolVar(&cfg.CheckLinks, "check-links", false, "Check all links in the README")
 	flag.BoolVar(&cfg.Format, "format", false, "Format and sort the README")
-	flag.BoolVar(&cfg.Verbose, "verbose", false, "Enable verbose output")
+	// Default verbose to true so I don't have to keep passing the flag while hacking locally
+	flag.BoolVar(&cfg.Verbose, "verbose", true, "Enable verbose output")
 	flag.BoolVar(&cfg.ShowVersion, "version", false, "Show version information")
 
 	flag.Usage = func() {
@@ -116,11 +117,3 @@ func checkLinks(filename string, verbose bool) ([]LinkResult, error) {
 // printLinkResults prints the results of link checking.
 func printLinkResults(results []LinkResult) {
 	failed := 0
-	for _, r := range results {
-		if r.Err != nil || r.Status >= 400 {
-			fmt.Printf("[FAIL] %s (status: %d, err: %v)\n", r.URL, r.Status, r.Err)
-			failed++
-		}
-	}
-	fmt.Printf("\nChecked %d links, %d failed\n", len(results), failed)
-}
